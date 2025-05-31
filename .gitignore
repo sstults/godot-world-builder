@@ -1,0 +1,45 @@
+# Godot 4+ specific ignores
+.godot/
+.import/
+
+# Godot-specific
+*.tmp
+export_presets.cfg
+
+# Mono-specific ignores (if using C#)
+.mono/
+data_*/
+mono_crash.*.json
+
+# System/OS
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+
+# Logs
+*.log
+
+# Temporary files
+*~
+*.swp
+*.swo
+
+# Build artifacts
+builds/
+exports/
+*.pck
+*.exe
+*.app
+*.dmg
+*.zip
+
+# AI Knowledge Base - Keep all .cline files in version control
+# !.cline/
