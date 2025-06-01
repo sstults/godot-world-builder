@@ -115,3 +115,34 @@ godot --headless --main-scene path/to/scene.tscn
 - Use `@export` for editor-configurable parameters
 - Group related exports with comments
 - Provide sensible default values
+
+## CI/CD Pipeline Issues
+
+### GitHub Actions Workflow Failures
+**Status**: Known issue as of 2025-05-31
+**Symptoms**: 
+- Container setup fails in GitHub Actions
+- Export template configuration issues
+- Project import failures in headless mode
+
+**Investigation Steps**:
+1. Check container image compatibility: `barichello/godot-ci:4.2.1`
+2. Verify Godot version consistency between env vars and container
+3. Ensure export templates match Godot version exactly
+4. Check project.godot file compatibility with headless import
+
+**Current Status**:
+- Fixed version mismatch (GODOT_VERSION: 4.2.1 matches container)
+- Workflow still failing despite version fix
+- Manual testing in local Godot editor works correctly
+
+**Workarounds**:
+- Focus on code-only development workflow
+- Manual validation using `godot --headless --quit --validate-project`
+- Defer CI/CD troubleshooting to dedicated infrastructure sprint
+
+**Next Steps for Resolution**:
+- Investigate export preset configuration requirements
+- Consider updating to newer Godot CI container images
+- May need custom Docker container for code-only projects
+- Add proper error logging to CI workflow steps
